@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 250px;
+            background: #000;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+        .library {
+            margin-top: 20px;
+        }
+        .library h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .library ul {
+            list-style: none;
+            padding: 0;
+        }
+        .library li {
+            padding: 8px 0;
+            cursor: pointer;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            margin-left: 270px;
+            margin-top: 50px;
+            padding-bottom: 80px;
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            padding: 15px 20px;
+            position: fixed;
+            width: calc(100% - 270px);
+            top: 0;
+            left: 270px;
+            z-index: 1000;
+        }
+        .top-nav button {
+            background-color: #1DB954;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            color: white;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .top-nav button:hover {
+            background-color: #17a74a;
+        }
+        .content-container {
+            margin-top: 80px;
+        }
+        header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .trending, .artist-list {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+        .trending::-webkit-scrollbar, .artist-list::-webkit-scrollbar {
+            display: none;
+        }
+        .song-card, .artist-card {
+            background: #282828;
+            padding: 10px;
+            border-radius: 8px;
+            width: 150px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .song-card img, .artist-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .player {
+            position: fixed;
+            bottom: 0;
+            left: 270px;
+            width: calc(100% - 270px);
+            background: #181818;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .player img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        .player-controls {
+            display: flex;
+            gap: 10px;
+        }
+        .player button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="spotify-logo.png" alt="Spotify Logo">
+            <h2>Spotify</h2>
+        </div>
+        <div class="library">
+            <h3>Your Library</h3>
+            <ul>
+                <li>Liked Songs</li>
+                <li>Recently Played</li>
+                <li>Albums</li>
+                <li>Artists</li>
+                <li>Podcasts</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="top-nav">
+            <h2>Home</h2>
+            <button onclick="window.location.href='login.html'">Log in</button>
+        </div>
+        <div class="content-container">
+            <header>Trending Songs</header>
+            <div class="trending">
+                <div class="song-card"><img src="cover1.jpg" alt="Song 1"><p>Song 1 - Artist 1</p></div>
+                <div class="song-card"><img src="cover2.jpg" alt="Song 2"><p>Song 2 - Artist 2</p></div>
+                <div class="song-card"><img src="cover3.jpg" alt="Song 3"><p>Song 3 - Artist 3</p></div>
+                <div class="song-card"><img src="cover4.jpg" alt="Song 4"><p>Song 4 - Artist 4</p></div>
+                <div class="song-card"><img src="cover5.jpg" alt="Song 5"><p>Song 5 - Artist 5</p></div>
+            </div>
+            <header>Popular Artists</header>
+            <div class="artist-list">
+                <div class="artist-card"><img src="anirudh.jpg" alt="Anirudh"><p>Anirudh</p></div>
+                <div class="artist-card"><img src="sid.jpg" alt="Sid Sriram"><p>Sid Sriram</p></div>
+                <div class="artist-card"><img src="thaman.jpg" alt="Thaman"><p>Thaman</p></div>
+                <div class="artist-card"><img src="arijit.jpg" alt="Arijit Singh"><p>Arijit Singh</p></div>
+                <div class="artist-card"><img src="honey.jpg" alt="Honey Singh"><p>Honey Singh</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="player">
+        <img src="cover1.jpg" alt="Now Playing">
+        <div class="player-controls">
+            <button>&#9665;</button>
+            <button>&#9658;</button>
+            <button>&#9655;</button>
+        </div>
+    </div>
+</body>
+</html>
